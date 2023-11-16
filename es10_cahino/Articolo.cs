@@ -63,10 +63,17 @@ namespace es10_cahino
     {
         public string Materiale { get; set; }
         public bool Rici { get; set; }
-        public NonAlimentare(string code, string n, double pr, string materiale, bool rici) : base(code, n, pr)
+        public NonAlimentare(string code, string n, double pr, bool rici) : base(code, n, pr)
         {
-            Materiale = materiale;
             Rici = rici;
+        }
+        public override void sconto_pr(bool fedeltà)
+        {
+            base.sconto_pr(fedeltà);
+            if(Rici)
+            {
+                Pr *= 0.9;
+            }
         }
 
     }
