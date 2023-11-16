@@ -28,9 +28,45 @@ namespace es10_cahino
                 Pr *= 0.95;
             }
         }
-        public void scadenza()
+    }
+    class Alimentare:Articolo
+    {
+        public int Scadenza { get; set; }
+        public Alimentare(string code, string n, double pr, int scadenza):base(code,n,pr)
         {
-
+            Scadenza = scadenza;
+        }
+        public override void sconto_pr(bool fedeltà)
+        {
+            base.sconto_pr(fedeltà);
+            if(Scadenza==DateTime.Now.Year) 
+            {
+                Pr *= 0.8;
+            }
         }
     }
-}
+    class AlimentareFr:Articolo
+    {
+        public int Gconsumo { get; set; }
+        public AlimentareFr(string code, string n, double pr, int gconsumo) :base(code,n,pr)
+        {
+            Gconsumo = gconsumo;
+        }
+        public override void sconto_pr(bool fedeltà)
+        {
+            base.sconto_pr(fedeltà);
+            double sconto = Gconsumo * 2;
+            Pr *= (1 - sconto / 100);
+        }
+    }
+    class NonAlimentare : Articolo
+    {
+        public string Materiale { get; set; }
+        public bool Rici { get; set; }
+        public NonAlimentare(string code, string n, double pr, string materiale, bool rici) : base(code, n, pr)
+        {
+            Materiale = materiale;
+            Rici = rici;
+        }
+
+    }
