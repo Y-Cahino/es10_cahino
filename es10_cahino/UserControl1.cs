@@ -47,5 +47,27 @@ namespace es10_cahino
         {
 
         }
+
+        private void desc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void code_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void price_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            string code = code1.Text;
+            string n = desc.Text;
+            double pr = double.Parse(price.Text);
+        }
     }
 }
