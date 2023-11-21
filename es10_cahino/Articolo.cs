@@ -13,7 +13,7 @@ namespace es10_cahino
     {
         public string Code { get; set; }
         public string N { get; set; }
-        public double Pr {get;set;}
+        public double Pr { get; set; }
         //Costruttore
         public Articolo(string code, string n, double pr)
         {
@@ -29,26 +29,26 @@ namespace es10_cahino
             }
         }
     }
-    class Alimentare:Articolo
+    class Alimentare : Articolo
     {
         public int Scadenza { get; set; }
-        public Alimentare(string code, string n, double pr, int scadenza):base(code,n,pr)
+        public Alimentare(string code, string n, double pr, int scadenza) : base(code, n, pr)
         {
             Scadenza = scadenza;
         }
         public override void sconto_pr(bool fedeltà)
         {
             base.sconto_pr(fedeltà);
-            if(Scadenza==DateTime.Now.Year) 
+            if (Scadenza == DateTime.Now.Year)
             {
                 Pr *= 0.8;
             }
         }
     }
-    class AlimentareFr:Articolo
+    class AlimentareFr : Articolo
     {
         public int Gconsumo { get; set; }
-        public AlimentareFr(string code, string n, double pr, int gconsumo) :base(code,n,pr)
+        public AlimentareFr(string code, string n, double pr, int gconsumo) : base(code, n, pr)
         {
             Gconsumo = gconsumo;
         }
@@ -70,10 +70,11 @@ namespace es10_cahino
         public override void sconto_pr(bool fedeltà)
         {
             base.sconto_pr(fedeltà);
-            if(Rici)
+            if (Rici)
             {
                 Pr *= 0.9;
             }
         }
 
     }
+}
