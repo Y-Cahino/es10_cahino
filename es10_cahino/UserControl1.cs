@@ -35,6 +35,12 @@ namespace es10_cahino
                 //mostra i dettagli sulla listbox
                 Ricevuta.Items.Add($"{articolo.N} - Prezzo: {articolo.Pr}");
             }
+            double totale = 0;
+            foreach(var articolo in articoli)
+            {
+                totale += articolo.Pr;
+            }
+            Ricevuta.Items.Add($"Totale: {totale}");
         }
 
         private void chkCard_CheckedChanged(object sender, EventArgs e)
