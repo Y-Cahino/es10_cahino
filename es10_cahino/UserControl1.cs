@@ -24,5 +24,22 @@ namespace es10_cahino
         {
 
         }
+
+        private void calculate_Click(object sender, EventArgs e)
+        {
+            Ricevuta.Items.Clear();
+            bool hasCard=chkCard.Checked;
+            foreach(var articolo in articoli)
+            {
+                articolo.sconto_pr(hasCard);
+                //mostra i dettagli sulla listbox
+                Ricevuta.Items.Add($"{articolo.N} - Prezzo: {articolo.Pr}");
+            }
+        }
+
+        private void chkCard_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
