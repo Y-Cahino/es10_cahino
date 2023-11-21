@@ -48,9 +48,12 @@ namespace es10_cahino
             string n = desc.Text;
             double pr = double.Parse(price.Text);
             Articolo newArticoli;
-            if(Convert.ToDouble(code) < 1000)
+            //alimentare va da 0 a 1999 (inclusi alimentari freschi
+            if(Convert.ToDouble(code) < 2000)
             {
-
+                int scadenza = 0;
+                newArticoli.data_sc(scadenza);
+                newArticoli = new Alimentare(code, n, pr,scadenza);
             }
         }
             private void chkCard_CheckedChanged(object sender, EventArgs e)

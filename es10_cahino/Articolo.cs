@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace es10_cahino
 {
 
-    class Articolo
+    public class Articolo
     {
         public string Code { get; set; }
         public string N { get; set; }
@@ -27,6 +27,14 @@ namespace es10_cahino
             {
                 Pr *= 0.95;
             }
+        }
+        public virtual int data_sc(int Scadenza)
+        {
+            Scadenza = DateTime.Now.Year;
+            Random r= new Random();
+            int AddA = r.Next(0, 10);
+            int aCasual=Scadenza+ AddA;
+            return aCasual;
         }
     }
     class Alimentare : Articolo
