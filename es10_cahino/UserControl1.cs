@@ -42,8 +42,18 @@ namespace es10_cahino
             }
             Ricevuta.Items.Add($"Totale: {totale}");
         }
+        private void add_Click(object sender, EventArgs e)
+        {
+            string code = code1.Text;
+            string n = desc.Text;
+            double pr = double.Parse(price.Text);
+            Articolo newArticoli;
+            if(Convert.ToDouble(code) < 1000)
+            {
 
-        private void chkCard_CheckedChanged(object sender, EventArgs e)
+            }
+        }
+            private void chkCard_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -61,13 +71,6 @@ namespace es10_cahino
         private void price_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            string code = code1.Text;
-            string n = desc.Text;
-            double pr = double.Parse(price.Text);
         }
     }
 }
